@@ -41,4 +41,25 @@ class Server:
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """ Returns a hypermedia index of a dataset. """
-        pass
+        assert type(index) is int and type(page_size) is int
+        indexed_data = self.indexed_dataset()
+        assert index >= 0 and index < len(indexed_data)
+
+        next_index = None
+        count = 0
+        data = []
+
+        for idx in indexed_data:
+            if count >= page_size:
+                next_index = idx
+                break
+            if idx >= index:
+                count += 1
+                data.append(indexed_data[idx])
+
+        return {
+            'index': index,
+            'data': data,
+            'page_size': len(data),
+            'next_index': next_index
+        }
