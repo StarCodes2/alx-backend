@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """ Defines class FIFOCache that inherits from BaseCaching and impliments
-    a first in first out caching system
+    a first in first out caching system.
 """
 BaseCaching = __import__('base_caching').BaseCaching
 
 
 class FIFOCache(BaseCaching):
-    """ defines a simple caching system of a fixed size that add items to a
-        cache using FIFO and remove them by key
+    """ defines a simple caching system of a fixed size that adding and
+        removing items from the cache using the FIFO caching policy.
     """
     def __init__(self):
         """ Initialise an object. """

@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """ Defines class BasicCache that inherits from BaseCaching and impliments
-    a caching system
+    a caching system.
 """
 BaseCaching = __import__('base_caching').BaseCaching
 
 
 class BasicCache(BaseCaching):
     """ defines a simple caching system that add items to a cache and
-        remove them by key
+        remove them by key.
     """
     def __init__(self):
         """ Initialise an object. """
