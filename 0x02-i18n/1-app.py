@@ -5,9 +5,10 @@ from flask_babel import Babel
 
 
 class Config:
-    """ Defines the langeages and timezone. """
+    """ Configuration for available languages and Babel settings. """
     LANGUAGES = ["en", "fr"]
-    TIMEZONE = "UTC"
+    BABEL_DEFAULT_LOCALE = "en"
+    BABEL_DEFAULT_TIMEZONE = "UTC"
 
 
 app = Flask(__name__)
@@ -19,12 +20,6 @@ babel = Babel(app)
 def get_locale():
     """ Gets the prefered language. """
     return request.accept_languages.best_match(app.config['LANGUAGES'])
-
-
-@babel.timezoneselector
-def get_timezone():
-    """ Returns the prefereed timezone. """
-    return app.config['TIMEZONE']
 
 
 @app.route("/", strict_slashes=False)
