@@ -2,6 +2,7 @@
 """ Flask app that implement a single route. """
 from flask import Flask, render_template, request
 from flask_babel import _, Babel
+from typing import Optional
 
 
 class Config:
@@ -17,7 +18,7 @@ babel = Babel(app)
 
 
 @babel.localeselector
-def get_locale() -> str:
+def get_locale() -> Optional[str]:
     """ Gets the prefered language. """
     if "locale" in request.args and \
        request.args['locale'] in app.config['LANGUAGES']:
