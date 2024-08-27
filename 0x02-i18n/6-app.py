@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ Flask app that implement a single route. """
 from flask import Flask, g, render_template, request
-from flask_babel import _, Babel
+from flask_babel import Babel
 from typing import Dict, Optional
 
 
@@ -54,8 +54,8 @@ def get_locale() -> Optional[str]:
 @app.route("/", strict_slashes=False)
 def index() -> str:
     """ Return a jinja template """
-    return render_template("5-index.html")
+    return render_template("6-index.html")
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port="5000")
+    app.run(host="0.0.0.0", port=5000)
