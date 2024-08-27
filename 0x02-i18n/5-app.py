@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ Flask app that implement a single route. """
 from flask import Flask, g, render_template, request
-from flask_babel import _, Babel
+from flask_babel import Babel
 from typing import Dict, Optional
 
 
