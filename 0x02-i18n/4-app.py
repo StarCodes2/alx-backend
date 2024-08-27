@@ -17,7 +17,7 @@ babel = Babel(app)
 
 
 @babel.localeselector
-def get_locale():
+def get_locale() -> str:
     """ Gets the prefered language. """
     if "locale" in request.args and \
        request.args['locale'] in app.config['LANGUAGES']:
@@ -26,7 +26,7 @@ def get_locale():
 
 
 @app.route("/", strict_slashes=False)
-def index():
+def index() -> str:
     """ Return a jinja template """
     return render_template("4-index.html")
 
