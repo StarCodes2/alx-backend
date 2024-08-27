@@ -16,12 +16,6 @@ app.config.from_object(Config)
 babel = Babel(app)
 
 
-@babel.localeselector
-def get_locale():
-    """ Gets the prefered language. """
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
-
-
 @app.route("/", strict_slashes=False)
 def index():
     """ Return a jinja template """
