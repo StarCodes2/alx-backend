@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ Flask app that implement a single route. """
 from flask import Flask, render_template, request
-from flask_babel import _, Babel
+from flask_babel import Babel
 
 
 class Config:
@@ -29,4 +29,4 @@ def index() -> str:
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0", port=5000)
