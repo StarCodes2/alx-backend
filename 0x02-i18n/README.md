@@ -8,6 +8,8 @@
 	- **4-index.html**: A Jinja template with the title and header parametrize with _() function.
 	- **4-index.html**: A Jinja template to display a user name if logged in.
 	- **5-index.html**: A Jinja template to display a user name if logged in.
+	- **6-index.html**: A Jinja template to display a user name if logged in.
+	- **7-index.html**: A Jinja template to display a user name if logged in.
 ## Files
 - **0-app.py**: Flask app with one route.
 - **1-app.py**: Flask app with with Babel's default locale and timezone setup
@@ -16,3 +18,4 @@
 - **4-app.py**: Contains a get_locale function, detect if the incoming request contains locale argument and ifs value is a supported locale, return it.
 - **5-app.py**: Mocks the login process.
 - **6-app.py**: Define get_locale function to use a user’s preferred local if it is supported.
+- **7-app.py**: Define a get_timezone function and use the babel.timezoneselector decorator.
