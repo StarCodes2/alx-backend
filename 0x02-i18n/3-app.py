@@ -17,13 +17,13 @@ babel = Babel(app)
 
 
 @babel.localeselector
-def get_locale():
+def get_locale() -> str:
     """ Gets the prefered language. """
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
 @app.route("/", strict_slashes=False)
-def index():
+def index() -> str:
     """ Return a jinja template """
     return render_template("3-index.html")
 
