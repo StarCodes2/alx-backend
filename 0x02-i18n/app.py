@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ Flask app that implement a single route. """
 from flask import Flask, g, render_template, request
-from flask_babel import Babel
+from flask_babel import Babel, format_datetime
 from typing import Dict, Optional
 import pytz
 
@@ -67,7 +67,8 @@ def get_timezone() -> str:
 @app.route("/", strict_slashes=False)
 def index() -> str:
     """ Return a jinja template """
-    return render_template("7-index.html")
+    g.current_time = format_datetime()
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
