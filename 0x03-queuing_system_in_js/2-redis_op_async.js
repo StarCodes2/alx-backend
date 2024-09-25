@@ -15,7 +15,7 @@ function setNewSchool(schoolName, value) {
   client.set(schoolName, value, print);
 }
 
-function displaySchoolValue(schoolName) {
+async function displaySchoolValue(schoolName) {
   client.get(schoolName, (err, value) => {
     if (err) {
       console.error(`Error retrieving value for ${schoolName}: ${err.message}`);
