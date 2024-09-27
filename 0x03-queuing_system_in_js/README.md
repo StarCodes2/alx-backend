@@ -11,3 +11,4 @@
 - **6-job_processor.js**: Creates a job processor.
 - **7-job_creator.js**: Creates multiple jobs to a queue from an array of data.
 - **7-job_processor.js**: Creates a processor that processes all the jobs in the queue.
+- **8-job.js**: Defines a function that creates multiple jobs in a queue.
