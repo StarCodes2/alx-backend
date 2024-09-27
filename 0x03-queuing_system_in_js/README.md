@@ -9,3 +9,5 @@
 - **5-publisher.js**: Sends messages to the channel subscribed to in 5-subscriber.js. 
 - **6-job_creator.js**: Creates a job using Kue.
 - **6-job_processor.js**: Creates a job processor.
+- **7-job_creator.js**: Creates multiple jobs to a queue from an array of data.
+- **7-job_processor.js**: Creates a processor that processes all the jobs in the queue.
