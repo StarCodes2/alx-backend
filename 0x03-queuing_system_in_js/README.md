@@ -7,4 +7,5 @@
 - **4-redis_advanced_op.js**: Creates hash using redis.
 - **5-subscriber.js**: Subscribes to a channel using redis and listens for messages on that channel.
 - **5-publisher.js**: Sends messages to the channel subscribed to in 5-subscriber.js. 
-- **6-job_creator.js**: creates a job using Kue.
+- **6-job_creator.js**: Creates a job using Kue.
+- **6-job_processor.js**: Creates a job processor.
