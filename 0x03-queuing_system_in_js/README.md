@@ -12,3 +12,4 @@
 - **7-job_creator.js**: Creates multiple jobs to a queue from an array of data.
 - **7-job_processor.js**: Creates a processor that processes all the jobs in the queue.
 - **8-job.js**: Defines a function that creates multiple jobs in a queue.
+- **8-job.test.js**: To test the function defined in 8-job.js using Mocha.
