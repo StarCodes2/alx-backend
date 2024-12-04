@@ -32,7 +32,7 @@ function reserveStockById(itemId, stock) {
   client.hset(itemId, stock);
 }
 
-as  ync function getCurrentReservedStockById(itemId) {
+async function getCurrentReservedStockById(itemId) {
   return await client.get(itemId, (err) => {
     if (err) {
      console.error('Product not found');
@@ -52,13 +52,18 @@ app.get('/list_products', (req, res) => {
 });
 
 app.get('/reserve_product/:itemId', (req, res) {
-  const inStock = getCurrentReservedStockById(req.params.get('itemId'));
+  const id = req.params.get('itemId');
+  const item = getItemById(id, listProducts);
+  const inStock = getCurrentReservedStockById(id);
   if (!item) {
     return res.json({"status":"Product not found"});
   }
 
-  const item = getItemById(req.params.get('itemId'), listProducts);
-  res.json({
+  if (!inStock || inStock < 1) {
+    return res.json({"status": "Not enough stock available","itemId": id});
+  }
+
+  return res.json({
     "itemId": req.params.get('itemId'),
     "itemName": item.name,
     "price": item.price,
